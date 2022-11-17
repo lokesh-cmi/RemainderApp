@@ -13,7 +13,7 @@ public interface EventRepository extends MongoRepository<Event, String> {
     @Query("{ 'name' : ?0 }")
     List<Event> findByName(String name);
 
-    @Query("{ 'event' : ?0 }")
+    @Query("{ 'event' : ?0 }")  
     List<Event> findByEvent(String event);
 
     @Query("{ 'date' : ?0 }")

@@ -1,17 +1,16 @@
-package com.remainder.DomainService.model;
+package com.remainder.CheckRemainder.model;
+
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import java.text.ParseException;
-import java.util.Date;
 
-@Document("calander")
+
+@Document("event-tomorrow")
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 @ToString
-public class Event {
+@Data
+public class EventTomorrow {
     @Id
     private String id;
     private String name;

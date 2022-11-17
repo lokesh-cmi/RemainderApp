@@ -15,5 +15,6 @@ public interface EventService {
     Event updateEvent(Event event);
     String deleteEvent(String id);
     Event readEventById(String id);
+    void addTomorrowEvent();
 
 }
