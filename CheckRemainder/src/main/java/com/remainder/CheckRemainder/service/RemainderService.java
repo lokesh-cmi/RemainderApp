@@ -11,16 +11,16 @@ import org.springframework.web.client.RestTemplate;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.logging.Logger;
 
 @Service
 public class RemainderService {
+        Logger logger = Logger.getLogger(RemainderService.class.getName());
 
         @Autowired
         EventRepository eventRepository;
         @Autowired
         private EventTomorrowRepository eventTomorrowRepository;
-
-
 
         public void pushRemainder() {
 
@@ -29,7 +29,7 @@ public class RemainderService {
                 calendar.add(Calendar.DAY_OF_YEAR, 1);
                 Date tomorrow = calendar.getTime();
                 String tomDate = new SimpleDateFormat("dd-MM-yyyy").format(tomorrow).toString();
-                System.out.println(tomDate);
+                logger.info(tomDate);
 
                 eventRepository.findByDate(tomDate).forEach(event -> {
                         EventTomorrow eventTomorrow = new EventTomorrow();

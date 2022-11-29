@@ -1,7 +1,7 @@
 package com.remainder.DomainService.controller;
 
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import com.remainder.DomainService.model.Event;
 import com.remainder.DomainService.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 public class EventController {
 
-//    static final Logger logger = LogManager.getLogger(EventController.class);
+   static final Logger logger = LogManager.getLogger(EventController.class);
 
     @Autowired
     EventService eventService;
@@ -26,7 +26,6 @@ public class EventController {
 
     @GetMapping("/events")
     public List<Event> getEvents() {
-//        logger.warn("Warned level log message");
         return eventService.getEvents();
     }
 
